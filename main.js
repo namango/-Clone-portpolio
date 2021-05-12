@@ -31,3 +31,11 @@ contactBtn.addEventListener("click", () => {
     block: "start",
   });
 });
+
+// home transaction
+const home = document.querySelector(".home__cantainer");
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
