@@ -391,6 +391,10 @@ p {
   background-color: var(--color-dark-white);
 }
 
+.project.invisible {
+  display: none;
+}
+
 /* Testimoniial */
 
 #testmonials {
