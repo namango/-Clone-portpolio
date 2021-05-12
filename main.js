@@ -39,3 +39,17 @@ const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+// Show arrow up button when scrolling down
+const arrowBtn = document.querySelector(".arrow_up");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowBtn.classList.add("visible");
+  } else {
+    arrowBtn.classList.remove("visible");
+  }
+});
+
+arrowBtn.addEventListener("click", () => {
+  document.querySelector("#home").scrollIntoView({ behavior: "smooth" });
+});
