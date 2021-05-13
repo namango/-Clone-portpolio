@@ -151,8 +151,8 @@ p {
 }
 
 .home__avatar {
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--color-white);
@@ -173,10 +173,15 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
+
 /* Section common */
 
 .section {
-  padding: 50px;
+  padding: 16px;
+  padding-top: 100px;
   text-align: center;
   margin: auto;
 }
@@ -306,6 +311,7 @@ p {
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -317,7 +323,7 @@ p {
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 5px;
 }
 
 .category__count {
@@ -328,9 +334,9 @@ p {
   height: 20px;
   display: inline-block;
   line-height: 20px;
-  position: relative;
-  top: -20px;
-  left: 4px;
+  position: absolute;
+  top: -10px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -498,8 +504,17 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size for mobile*/
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   .navbar__toggle-btn {
     display: block;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -522,6 +537,16 @@ p {
 
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+
+  .major {
+    margin-bottom: 30px;
+  }
+
+  .category__btn {
+    margin-bottom: 8px;
   }
 
   .about__major {
@@ -536,8 +561,27 @@ p {
     flex-grow: 1;
   }
 
+  .testmonial {
+    flex-direction: column;
+  }
+
   .testmonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testmonial__avatar:nth-child(even),
+  .testmonial__avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testmonials__speech-bubble {
+    order: 1;
+  }
+
+  .arrow_up {
+    right: 10px;
+    bottom: 10px;
   }
 }
