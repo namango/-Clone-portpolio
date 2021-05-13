@@ -21,6 +21,7 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   value.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
@@ -31,6 +32,15 @@ contactBtn.addEventListener("click", () => {
     behavior: "smooth",
     block: "start",
   });
+});
+
+// toggle-Btn to show navbar__menu;
+const toggleBtn = document.querySelector(".navbar__toggle-btn");
+toggleBtn.addEventListener("click", () => {
+  if (window.innerWidth > 768) {
+    return;
+  }
+  navbarMenu.classList.toggle("open");
 });
 
 // home transaction
